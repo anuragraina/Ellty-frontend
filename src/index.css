@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+/* Hide the default checkbox */
+.hidden-checkbox {
+  appearance: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* Basic styling for the SVG checkbox */
+.custom-checkbox {
+  border: 1px solid #CDCDCD;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hover Effect (Unchecked) */
+.checkbox-label:hover .custom-checkbox {
+  border-color: #BDBDBD;
+}
+.checkbox-label:hover .checkbox-tick {
+  stroke: #E3E3E3; 
+}
+
+/* Pressed Effect (Unchecked) */
+.checkbox-label:active .custom-checkbox {
+  border-color: #BDBDBD;
+  box-shadow: 0px 0px 1px 5px rgba(36, 105, 246, 0.1);
+}
+.checkbox-label:active .checkbox-tick {
+  stroke: #878787;
+}
+
+/* Checked State */
+.hidden-checkbox:checked + .custom-checkbox {
+  border: none
+}
+.hidden-checkbox:checked + .custom-checkbox .checkbox-bg {
+  fill: #2469F6; /* Blue background */
+}
+.hidden-checkbox:checked + .custom-checkbox .checkbox-tick {
+  stroke: #FFFFFF; /* Show tick in white */
+}
+
+/* Hover Effect (Checked) */
+.checkbox-label:hover .hidden-checkbox:checked + .custom-checkbox .checkbox-bg {
+  fill: #5087F8;
+}
+
+/* Pressed Effect (Checked) */
+.checkbox-label:active .hidden-checkbox:checked + .custom-checkbox .checkbox-bg {
+  fill: #2469F6;
+}
