@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: Montserrat;
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
+@theme {
+  --font-montserrat: Montserrat, "sans-serif";
+}
+
 /* Hide the default checkbox */
 .hidden-checkbox {
   appearance: none;
@@ -38,10 +47,10 @@
   border: none
 }
 .hidden-checkbox:checked + .custom-checkbox .checkbox-bg {
-  fill: #2469F6; /* Blue background */
+  fill: #2469F6;
 }
 .hidden-checkbox:checked + .custom-checkbox .checkbox-tick {
-  stroke: #FFFFFF; /* Show tick in white */
+  stroke: #FFFFFF;
 }
 
 /* Hover Effect (Checked) */
@@ -52,4 +61,29 @@
 /* Pressed Effect (Checked) */
 .checkbox-label:active .hidden-checkbox:checked + .custom-checkbox .checkbox-bg {
   fill: #2469F6;
+}
+
+@layer components {
+  .card {
+    padding: 10px 15px;
+    border: 1px solid #EEEEEE;
+    border-radius: 6px;
+    box-shadow: 0px 8px 15px 0px #1414141F, 0px 0px 4px 0px #1414141A;
+  }
+
+  .btn {
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #FFCE22;
+
+    &:hover {
+    background: #FFD84D;
+    }
+
+    &:active {
+      background: #FFCE22;
+    }
+  }
 }

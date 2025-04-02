@@ -1,7 +1,7 @@
 const ListItem = ({ identifier, label, checked, updatePages }) => {
     return (
         <div
-            className='checkbox-label flex justify-between w-full cursor-pointer'
+            className='px-[7px] py-[8px] checkbox-label flex justify-between w-full cursor-pointer'
             onClick={() => updatePages(identifier)}
         >
             <label>{label}</label>
